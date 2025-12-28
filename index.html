@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        a {
+            color: whitesmoke;
+            transition: all 0.4s;
+        }
+
+        a:hover {
+            color: rgb(255, 191, 96);
+        }
+
+        #root-box {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        #root-background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .8;
+            z-index: -1;
+        }
+
+        #root-background img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: show2 1s;
+        }
+
+        #content {
+            width: 80%;
+            margin: 0 10%;
+        }
+
+        .Pag {
+            margin: 0 auto;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+        }
+
+        #Pag1>* {
+            opacity: 0;
+        }
+
+        #Pag2>* {
+            opacity: 0;
+        }
+
+        #Pag3>* {
+            opacity: 0;
+        }
+
+        #Pag1 img {
+            position: relative;
+            top: -240px;
+            animation: show1 1s 0.5s forwards;
+        }
+
+        .NoLow {
+            animation: show1 1s;
+            display: inline-block;
+        }
+
+        #Pag2 img {
+            width: 250px;
+            position: relative;
+            top: -80px;
+            animation: show1 1s 0.5s forwards;
+        }
+
+        #Pag2 h1 {
+            margin-top: 36px;
+            font-size: 92px;
+            animation: show1 1s forwards;
+            color: #F8A636;
+            text-shadow: 3px 3px 12px whitesmoke;
+        }
+
+        #Pag1 h1 {
+            margin-top: 36px;
+            font-size: 92px;
+            animation: show1 1s forwards;
+            color: #F8A636;
+            text-shadow: 3px 3px 12px whitesmoke;
+        }
+
+        #Pag2 h2 {
+            position: relative;
+            top: -100px;
+            color: whitesmoke;
+            font-size: 48px;
+            text-shadow: 2px 4px 2px #D23028;
+        }
+
+        #Pag1 h2 {
+            animation: show1 1s 1s forwards;
+            position: relative;
+            top: -390px;
+            color: whitesmoke;
+            font-size: 48px;
+            text-shadow: 2px 4px 2px #D23028;
+        }
+
+        #Pag1 button {
+            animation: show1 1s 1.5s forwards;
+            position: relative;
+            top: -300px;
+            border-radius: 100%;
+            width: 200px;
+            height: 200px;
+            background-color: #f8a736ef;
+            font-size: 36px;
+            border: 4px solid white;
+            transition: all 0.4s;
+        }
+
+        #Pag2 button {
+            position: relative;
+            border-radius: 100%;
+            width: 200px;
+            height: 200px;
+            background-color: #f8a736ef;
+            font-size: 36px;
+            border: 4px solid white;
+            transition: all 0.4s;
+        }
+
+        #Pag1 button:hover,
+        #Pag2 button:hover,
+        #Pag3 button:hover {
+            border: 4px solid #D23028;
+        }
+
+        #creatLow {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #creatLow img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .showclass {
+            animation: show1 1s forwards;
+        }
+
+        .youArePrefect {
+            animation: show3 1s;
+            font-size: 74px;
+        }
+
+        #Pag3 h1 {
+            animation: show1 1s forwards;
+            color: #57ecce;
+            font-size: 48px;
+            text-shadow: 3px 3px 4px #f9e1bf;
+        }
+
+        #Pag3 ul {
+            list-style-position: inside;
+            list-style-image: url("img/listLi.png");
+            margin: 0 auto;
+            width: 39vw;
+            background-color: #c8ffffc9;
+            border-radius: 39px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            max-height: 70vh;
+            overflow: auto;
+            animation: show1 1s 0.5s forwards;
+        }
+
+        #Pag3 li {
+            font-size: 36px;
+            text-align: left;
+            text-shadow: 2px 1px 3px rgb(255, 255, 255);
+            color: #F23847;
+            animation: show1 1s;
+        }
+
+        #Pag3 li>span {
+            display: inline-block;
+            font-weight: bold;
+            color: #F39C12;
+            text-shadow: 2px 1px 1px whitesmoke;
+            width: 105px;
+            animation: colorful 25s infinite;
+        }
+
+        #Pag3 button {
+            border-radius: 12px;
+            width: 120px;
+            background-color: #f8a736ef;
+            font-size: 24px;
+            border: 4px solid white;
+            transition: all 0.4s;
+            margin: 15px;
+        }
+
+        @keyframes show1 {
+
+            /* 从上到下渐入 */
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes show2 {
+
+            /* 渐入 */
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes show3 {
+            0% {
+                font-size: 105px;
+                color: #f8a736ef;
+            }
+
+            100% {
+                font-size: 74px;
+                color: whitesmoke;
+            }
+        }
+        @keyframes colorful {
+            0%{color: #F23847;}
+            10%{color: #419FD9;}
+            30%{color: #79DCF2;}
+            50%{color: #7CBF17;}
+            70%{color: #F2EB8D;}
+            100%{color: #F23847;}
+        }
+    </style>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="root-box">
+        <div id="root-background">
+            <img src="img/background1.png" alt="背景">
+        </div>
+        <div id="content">
+            <div class="Pag" id="Pag1">
+                <h1>2026</h1>
+                <img src="img/newYear.png" alt="新年快乐">
+                <h2><span style="font-size: 64px;text-shadow: 2px 4px 2px #E9942E;">小xin</span>，请查收你的2025大学生活报告~</h2>
+                <button class="downPag">好</button>
+            </div>
+        </div>
+        <div id="creatLow"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            function getRandomNum(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            var Pagimg = 1;
+            var pagContent = ['第0页', '<div class="Pag" id="Pag1"><h1>2026</h1><img src="img/newYear.png" alt="新年快乐"><h2><span style="font-size: 64px;text-shadow: 2px 4px 2px #E9942E;">小xin</span>，请查收你的2025大学生活报告~</h2>button class="downPag">好</button></div>', '<div class="Pag" id="Pag2"><h1>你的关键词</h1><img src="img/low.png" alt="差评" id="chaping"><img src="img/good.png" alt="好评" id="haoping" style="display:none"><h2>关键词有误？<a href="#" id="Nomykey">【这不是我的关键词】</a></h2><button class="downPag">下一页</button></div>', '<div class="Pag" id="Pag3"><h1 title="and me">你的世界线</h1><ul></ul><button class="downPag">下一页</button></div>'];
+            var timelist = ['<li title="不让你ta看我的朋友圈"><span>8.18 </span> 加好友</li>','<li><span>9.4 </span> 顺利开学</li>','<li><span>9.8 </span> 军训【内有暴雨】</li>','<li><span>10.13 </span> 团日散步/野人先生</li>','<li><span>10.20 </span> 反诈KTV</li>','<li><span>10.24 </span> "大鱼上钩"</li>','<li><span>11.2 </span> 深圳创新TV社会实践小组成立</li>','<li><span>11.9 </span> 领养抖音火花</li>','<li><span>11.10 </span> 吃巧克力蛋糕（￣▽￣）~</li>','<li><span>11.12 </span> 柳G206火锅</li>','<li><span>11.14 </span> 小xin in 佛山</li>','<li><span>11.17 </span> 一起慢跑【累】</li>','<li><span>11.21 </span> 鸡柳大人【好吃】</li>','<li><span>11.26 </span> 细菌感染【健康饮食】</li>','<li><span>11.29 </span> 星级宿舍get！</li>','<li><span style="font-size: 30px;">12月初 </span> “戒抖音”【失败】</li>','<li><span>12.4 </span> 疯狂动物城2</li>','<li><span>12.5 </span> 代体测/冰淇淋【下次还找你</li>','<li><span>12.8 </span> 小xin外卖被偷【值得纪念x</li>','<li><span>12.9 </span> 胡闹厨房【纯胡闹</li>','<li><span>12.15 </span> 不可抗力事件【你别难过了</li>','<li><span>12.24 </span> 大潮起珠江</li>','<li><span>12.25 </span> 圣诞快乐</li>','<li><span>2026 </span> 新年快乐</li>'];
+            $(document).on("click", ".downPag", function () {
+                $(this).attr("disabled", "disabled");
+                $("#root-background img").animate({
+                    top: "+=240px",
+                    opacity: 0
+                }, 1200, function () {
+                    $(this).remove();
+                })
+                $("#Pag" + Pagimg).animate({
+                    top: "+=240px",
+                    opacity: 0
+                }, 1200, function () {
+                    $(this).remove();
+                })
+                Pagimg++;
+                $("#root-background").prepend("<img src='img/background" + Pagimg + ".png'>");
+                $("#content").prepend(pagContent[Pagimg]);
+                if (Pagimg == 2) {
+                    var lownum = 0;
+                    var creatLow = setInterval(function () {
+                        lownum++;
+                        var div = document.createElement('img');
+                        div.src = "img/low.png";
+                        div.classList.add("NoLow");
+                        div.style.top = getRandomNum(0, 75) + "vh";
+                        div.style.left = getRandomNum(0, 85) + "vw";
+                        div.style.width = getRandomNum(80, 240) + "px";
+                        $("#creatLow").append(div);
+                        if (lownum > 24) {
+                            clearInterval(creatLow);
+                            $("#Pag2 h2").addClass("showclass");
+                        }
+                    }, 120);
+                } else if (Pagimg == 3) {
+                    var listnum = 0;
+                    var creatlist = setInterval(function () {
+                        $("#Pag3 ul").prepend(timelist[listnum]);
+                        listnum++;
+                        if (listnum > 24) {
+                            clearInterval(creatlist);
+                            $("#Pag3 button").addClass("showclass");
+                        }
+                    }, 1300);
+                }
+            });
+            $(document).on("click", "#Nomykey", function () {
+                $("#Pag2 h2").text("");
+                $(".NoLow").animate({
+                    top: "159px",
+                    left: "44vw",
+                    width: "200px"
+                }, 1200, function () {
+                    $(".NoLow").animate({
+                        opacity: 0
+                    }, 700, function () {
+                        $(".NoLow").remove();
+                    })
+                });
+                setTimeout(function () {
+                    $(document).find("#chaping").hide();
+                    $(document).find("#haoping").show();
+                    setTimeout(function () {
+                        $("#Pag2 h2").append("<span class='youArePrefect'>你</span>");
+                    }, 1000);
+                    setTimeout(function () {
+                        $("#Pag2 h2").append("<span class='youArePrefect'>是</span>");
+                    }, 1500);
+                    setTimeout(function () {
+                        $("#Pag2 h2").append("<span class='youArePrefect'>最</span>");
+                    }, 1800);
+                    setTimeout(function () {
+                        $("#Pag2 h2").append("<span class='youArePrefect'>棒</span>");
+                    }, 2100);
+                    setTimeout(function () {
+                        $("#Pag2 h2").append("<span class='youArePrefect'>的</span>");
+                    }, 2400);
+                    setTimeout(function () {
+                        $("#Pag2 h2").append("<span class='youArePrefect'>！</span>");
+                    }, 2500);
+                    setTimeout(function () {
+                        $("#Pag2 button").addClass("showclass");
+                    }, 3500);
+                }, 1600);
+            });
+        });
+    </script>
+</body>
+
+</html>
