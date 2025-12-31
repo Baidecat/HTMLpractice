@@ -189,7 +189,7 @@ a:hover {
 
 #Pag3 ul {
     list-style-position: inside;
-    list-style-image: url("img/listLi.png");
+    list-style-image: url("../img/listLi.png");
     margin: 0 auto;
     width: 39vw;
     background-color: #c8ffffc9;
@@ -571,4 +571,5 @@ video {
         transform: rotateY(0deg);
         opacity: .8;
     }
+
 }
