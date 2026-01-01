@@ -4,8 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfterTalk</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        #Pag3 ul {
+            width: 46vw;
+            background-color: rgba(240, 248, 255, 0.71);
+        }
+        #Pag3 li {
+            color: #1f1f1f;
+            font-size: 26px;
+        }
+        #Pag3 span {
+            display: inline-block;
+            width: auto !important;
+            font-size: 32px;
+        }
+        strong {
+            color: rgb(253, 58, 58);
+        }
+    </style>
 </head>
 <body>
-    <h1>困了，没做</h1>
+    <audio src="img/Grin.mp3" loop id="music"></audio>
+    <div id="root-box">
+        <div id="musicBox">
+            <div id="musicBorder">
+                <img src="img/Grin.png" alt="歌曲封面" width="60px" title="点击暂停音乐" onclick="controlMusic()">
+            </div>
+        </div>
+        <div id="root-background">
+            <img src="img/background5.png" alt="背景">
+        </div>
+        <div id="content">
+            <div class="Pag" id="Pag3">
+                <h1>后日谈<button>播放音乐</button></h1>
+                <ul>
+                    <li><span>为什么写这个网页？</span><br>学习写网页，想不到内容，就以此作为“<del>圣诞礼物</del>”送给你<i>这样就不会被说内卷了</i>，但是23号才新建文件夹，所以搞到新年来吧！</li>
+                    <li><span>为什么说“不爱老己”?</span><br>纯个人主观判断<i>喜欢划自己手一点都不爱老己！</i>，你无需讨好任何人，对象除外。要把自己放在第一位哦！</li>
+                    <li><span>关于12月31日【1】</span><br>明明说好早睡的，我都睡下了，你居然还在打瓦。小睡了一个多小时，醒了，躺着<i>因为那天喝了奶茶，起夜好几次并失眠</i>，听到你去阳台把门带上。<br>我：“这个小轩关门这么吵，还说要早睡，就是故意骗我睡下的吧！(恼)”<br>【小轩跟班长语音】<br>我：“？在说什么，我也要听！！”<br><i>这不算我偷听吧！这个门真碍事</i><br>我：“太好了，终于把自己的心里话说出来了吗？”<br><i>把听到的写进网页吧</i><br>开始思考/回忆</li>
+                    <li><span>"想让自己变成让人喜欢的人"</span><br><i>是指让女朋友喜欢吗？应该是吧？</i><br><strong>以下所有哲理观点都为主观</strong><br>其实朋友之间也不一定要自己去拼命讨好，<i>想不出来了，我也不是什么朋友大师</i>但是想被受欢迎也是好事嘛！</li>
+                    <li><span>关于12月31日【2】</span><br>【小轩在<del>被窝里</del>跟班长语音】<br><i>我一直在偷听（不是</i><br>“······可能就是，我的性格也比较敏感”<br>我：“好压抑哦，这是真想要一段长久的友谊捏？”<i>不像我，是个老二次元，朋友和我都没什么联系，或许我根本不能够理解你？但是我认为你也是有很多朋友的，只是你自己在内耗，根本没有必要哦，要相信自己，多一点自信吧！身边的许多人都有在在意着你</i><br>【聊完后过了一会】<br>我在思考我和小轩对于朋友的概念和理解有哪些差别。<br>【小轩擤鼻涕】<br>他一定在想很多事，<del>我要不要起来爬他床上告诉他“刚刚的我都听到了<i>让他切换一下状态（x，其实是添乱吧</i>”</del></li>
+                    <li><span>"You have many friends but me, NO"</span><br>我不同意你的观点，我喜欢独处（x,只是因为我和朋友们的联系真的没有多少，能够交到的朋友都是热心的，那种正常性格的都不可能交到的好吧！<br>要我说，我高中只是因为上下学是同一条地铁，所以才在放学的路上能够唠嗑，<i>像是搭子一样</i>能有人陪着就好，<i>在emo时也会试图倾诉</i>，别人交朋友可能是有共同的兴趣爱好还会一起出去玩，<i>而我只会打音游并且宅在家里</i>所以毕业时，我也知道，我和他们的联系微乎其微，这段友谊<i>感谢陪伴</i>要结束力，但也有热心的朋友，在我需要的时候我就大胆联系就好了！<i>因为我习惯自己一个人了吧？别人可能是我重要的朋友，但我不一定是别人重要的朋友</i><br>假设：如果在一个班级没有合适的人发展为朋友，你会选择在还不错的人面前改变自己，让自己融入其中，是吗？我认为你会，<i title="我和你反着来">而我可能不会去强行融入某一个集体，因为什么？<del>因为我不是独生子女</del>因为我自己一个人也能过的很好吗？但我也不是不想要一个知心朋友。好吧，其实是我懒，悲观，内向。</i>或许我应该学习你，勇敢一些，自信一些。<i>我要说什么啊啊啊？：</i>总之也要好好对待自己哦，只要前进，总会遇到真心的。</li>
+                    <li><span>大胆的猜想</span><br><i>你一直把自己伪装成一个E人吗？</i>但是你可以是！或者说，你可以改变，因为你的决心<i title="我在写啥？">?你的渴望</i></li>
+                    <li><span>关于12月31日【3】</span><br>小轩睡着了，我喝了奶茶，一点都不困呢，其实很多事情在之前的日常都有跟我吐露过呢，他究竟在焦虑什么呢？<i>他想要什么样的朋友？我能成为他重要的朋友吗？</i><i>或许我们很像，但小轩比我优秀的多，为什么会有抑郁倾向？是因为独生子女吗，还是因为放不下</i><br>【反正就是睡不着】<br>【五点把自己哄睡】<br>【七点四十起来试探一下】<i>昨天几点睡的，在干嘛，我全都知道哦</i><br>【下午继续写网页，从Pag6开始】<br>做的好烂，但时间不多了<i>我要打音游</i></li>
+                    <li><span>问题重点是？</span><br>其实我不认为我抓住了问题的重点，但是还是写了这一大坨字。<br>但是呢！<strong>沟通</strong>，是很重要的哦！只有把自己的想法讲出来！才知道你做的有没有意义！你不说，结果会怎么样，谁也不知道！<i>所以，在合适的时候，可以把自己的想法说出来哦！不用担心，做你自己。</i></li>
+                    <li><span>你对于我来说是————</span><br><i>陪我唠嗑</i><i>勾引我去打蓝桥杯</i><i>陪我散步</i><i>带我学习</i>的人<br><i>我喜欢你</i>的主动，<i>我喜欢你</i>的勇敢，<i>我喜欢你</i>的改变，你是一个<i>值得被喜欢的人，你不用去成为别人喜欢的人（女朋友<strong>除外</strong>，你做你自己就好</i><br></li>
+                    <li><span>毕业后？</span><br>毕业后会怎么样 我也不知道，虽然我们没有什么共同爱好<i>但是我们有共同点</i>，但是我知道，至少当下，我们可以做很多事情，为什么不好好珍惜当下呢<i>如果可以，我想一直陪着你，因为我觉得我可以从你身上学到好多，反正是有益的！</i>,拒绝焦虑！学会离别，并且人生的每个阶段都会有新的朋友呀。明天会怎么样谁也不知道，但是在愉快的当下才是最珍贵的</li>
+                    <li><span>总结</span><br><i>我语文好差</i><br>祝你新年快乐！新的一年也请多多关照，好好享受吧！</li>
+                    <li><span>Best Wishes</span><br><i>2026年1月1日21点49分-我要打音游 不敢看第二遍</i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var musicState = true;
+        function controlMusic() {
+                if (musicState) {
+                    document.getElementById("music").pause();
+                    $("#musicBorder img").css("animation", "none");
+                    $("#musicBorder img").attr("title", "点击播放音乐");
+                    musicState = false;
+                } else {
+                    document.getElementById("music").play();
+                    $("#musicBorder img").css("animation", "rotate 12s linear infinite");
+                    $("#musicBorder img").attr("title", "点击暂停音乐");
+                    musicState = true;
+                }
+            }
+        $(document).ready(function(){
+            $("button").click(function(){
+                document.getElementById("music").play();
+                $("#musicBox").css("animation", "show1 1s forwards");
+                $(this).remove();
+            });
+        });
+    </script>
 </body>
 </html>
