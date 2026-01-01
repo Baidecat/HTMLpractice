@@ -596,6 +596,7 @@ video {
     font-size: 28px !important;
   }
   .Pag ul {
-    width: 90vw;
+    width: 90vw !important;
   }
 }
+
