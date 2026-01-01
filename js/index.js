@@ -31,7 +31,7 @@ $(document).ready(function () {
                 alert("请输入一个愿望/目标~");
                 return;
             }
-        } (Pagimg == 0) {
+        } else if (Pagimg == 0) {
             Pagimg++;
             alert("如果图片加载很慢/卡，就不要往下看了，找我要压缩包。");
             return;
@@ -192,5 +192,6 @@ $(document).ready(function () {
     });
 
 });
+
 
 
